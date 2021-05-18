@@ -8,12 +8,12 @@
 
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
-var playerAttack = 70;
+var playerAttack = 10;
 var playerMoney = 10;
 
 var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
-var enemyAttack = 32;
+var enemyAttack = 12;
 
 
 // fight function
@@ -60,7 +60,8 @@ var fight = function(enemyName) {
             if (confirmSkip) {
             window.alert(playerName + " has decided to skip this fight. Goodbye!");
             // subtract money from playerMoney for skipping
-            playerMoney = playerMoney - 2;
+            playerMoney = playerMoney - 10;
+            console.log("playerMoney", playerMoney);
             }
             // if no (false), ask question again by running fight() again
             else {
@@ -79,7 +80,6 @@ var fight = function(enemyName) {
 
 // run fight function to start game
 for(var i = 0; i < enemyNames.length; i++) {
-    debugger;
    var pickedEnemyName = enemyNames[i];
    enemyHealth = 50;
     fight(pickedEnemyName);
