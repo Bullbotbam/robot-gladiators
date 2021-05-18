@@ -139,13 +139,58 @@ var startGame = function() {
       window.alert("Thank you for playing Robot Gladiators! Come back soon!");
     }
     // //after the loop ends, player is either out of health or enemies to fight, so run the endGame function
-    // endGame();
-};
+    //  endGame();
+     
+  };
   var shop = function() {
-    // ask player what they's like to do
-    var shopOptionPrompt(
+    // ask player what they'd like to do
+    var shopOptionPrompt = window.prompt(
       "Wold you like to REFILL your health, UPGRADE your attack or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE' or 'LEAVE' to make a choice."
-    );
+      );
+      // use seitch to carry  out action
+      switch (shopOptionPrompt) {
+        case "REFILL": // new case
+        case "refill":
+          if (playerMoney >= 7) {
+             
+          window.alert("Refilling player's health by 20 for 7 bitcoins.");
+
+            // increase health and decrease money
+            playerHealth = playerHealth + 20;
+            playerMoney = playerMoney - 7;
+          }
+          else {
+            window.alert("You don't have enough bitcoin!");
+          }
+
+          break;
+        case "UPGRADE": // new case
+        case "upgrade":
+          if (playerMoney >= 7) {
+            
+          window.alert("Upgrading player's attack by 6 for 7 bitcoins.");
+          
+            // increase attack  and decrease money
+            playerAttack = playerAttack + 6;
+            playerMoney = playerMoney - 7;
+          }
+          else {
+            window.alert("You don't have enough bitcoin!")
+          }
+
+          break;
+        case "LEAVE": // new case
+        case "leave":
+          window.alert("Leaving the store.");
+          
+          // do nothing, so function will end
+          break;
+        default:
+          window.alert("You did not pick a valid option. Try again.");
+          // call shop() again to force player to pick a valid option
+          shop();
+          break;
+      }
   };
 
 //start the game when the page loads
