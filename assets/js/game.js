@@ -1,11 +1,17 @@
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
-var playerAttack = randomNumber(7, 10);
+var playerAttack = 10;
 var playerMoney = 10;
 
 var enemyNames = ['Roborto', 'Amy Android', 'Robo Trumble'];
-var enemyHealth = randomNumber(40, 60);
+var enemyHealth = 50;
 var enemyAttack = 12;
+// function to generatr a random numeric value
+var randomNumber = function(min, max) {
+  var value = Math.floor(Math.random() * (max - min + 1) + min);
+
+  return value;
+}
 
 console.log(enemyNames);
 console.log(enemyNames.length);
@@ -196,12 +202,7 @@ var startGame = function() {
           break;
       }
 
-      // function to generatr a random numeric value
-      var randomNumber = function(min, max) {
-        var value = Math.floor(Math.random() * (max - min + 1) + min);
-
-        return value;
-      }
+      
   };
 
 //start the game when the page loads
