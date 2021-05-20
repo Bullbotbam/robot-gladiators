@@ -211,7 +211,6 @@ var shop = function() {
   }
 };
 
-/* END GAME FUNCTIONS */
 
 /* GAME INFORMATION / VARIABLES */
 // function to set name
